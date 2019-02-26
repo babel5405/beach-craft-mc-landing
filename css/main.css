@@ -1,0 +1,123 @@
+@media (pointer:none), (pointer:coarse) {
+    body {
+        overflow-Y: scroll !important;
+    }
+}
+
+@media (max-width:700px) {
+    body {
+        overflow-Y: scroll !important;
+    }
+
+    #links {
+        width: 100% !important;
+    }
+}
+
+body::before {
+    height: 100vh;
+    width: 100vw;
+    content: "";
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: -1; /* Ensure this stays under all elements */
+    background-image: url("../img/bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(3px) saturate(70%) brightness(75%);
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    color: #FFF;
+    overflow: hidden;
+    background-color: black;
+    font-family: arial;
+}
+
+/* Page Layout **/
+#grid-wrapper {
+    display: grid;
+    grid-template-rows: 3fr 5fr 2fr;
+    min-height: 100vh;
+    padding: 2vh 2vw 2vw 2vh;
+}
+
+header {
+    display: grid;
+    align-content: center;
+    font-style: oblique;
+    font-family: "Trebuchet MS";
+    padding-left: 5vw;
+    margin-bottom: 10vh;
+}
+
+header i {
+    position: relative;
+    top: -10px;
+}
+
+#headline h1 {
+    font-size: 4em;
+    margin-bottom: 0px;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(5px 5px 3px rgba(0,0,0,0.5));
+    user-select: none;
+}
+
+#headline h1 i {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+#headline h3 {
+    font-size: 1.5em;
+}
+
+main {
+    display: grid;
+    align-content: center;
+}
+
+#links {
+    display: grid;
+    width: 50%;
+    grid-template-columns: repeat( auto-fit, minmax(5em, 1fr) );
+    grid-gap: 5em;
+}
+
+#links a {
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
+    display: grid;
+    grid-row: 1fr 1fr;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+a:hover {
+    transform: scale(0.99);
+    filter: drop-shadow(3px 3px 2px rgba(0,0,0,0.5));
+}
+
+a i {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+a .text-link {
+
+}
+
+footer {
+    display: grid;
+    align-content: end;
+    justify-content: center;
+    padding-bottom: 2vh;
+}
